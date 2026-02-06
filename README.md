@@ -4,7 +4,9 @@
 
 **Objective:** Classify news headlines as real or fake using Natural Language Processing techniques, progressing from traditional machine learning to transformer-based deep learning models.
 
-**Team:** Group 4 (IronHack NLP Challenge, Week 4)
+**Team:** Rodrigo Torralba, Hrishikesh Reddy Sanivarapu, Krzysztof Giwojno
+
+**Course:** IronHack Data Science Bootcamp, Week 4 NLP Challenge
 
 **Final Submission Model:** DistilBERT (fine-tuned, Epoch 2 checkpoint)
 
@@ -112,62 +114,45 @@ A shared limitation across all transformer experiments is that the test set was 
 
 ## Repository Structure
 
-### Final Submission Files
+```
+NLP_challenge_G4/
+├── NLP_G4_final.ipynb                          # ⭐ Final submission notebook (DistilBERT)
+├── testing_data_lowercase_nolabels_final.csv   # ⭐ Final submission predictions
+├── README.md                                   # This file
+├── Presentation template.pptx                  # Slide deck for project presentation
+│
+└── road_to_success/                            # All experiments, data, and documentation
+    ├── NLP_G4_LogisticRegression_Comparison.ipynb   # LR: 9 preprocessing configs compared
+    ├── NLP_G4_BERT2.0.ipynb                         # DistilBERT experiment
+    ├── NLP_G4_RoBERTa.ipynb                         # RoBERTa experiment
+    ├── training_data_lowercase.csv                  # Training dataset (34,152 headlines)
+    ├── testing_data_lowercase_nolabels.csv          # Original test data (9,984 headlines)
+    ├── testing_data_predictions_LR.csv              # LR predictions on test data
+    ├── validation_data_predictions_BERT20.csv       # DistilBERT predictions on test data
+    ├── validation_data_predictions_RoBERTa.csv      # RoBERTa predictions on test data
+    ├── README_LogisticRegression.md                 # LR experiment documentation
+    ├── README_LogisticRegression_v2.md              # LR docs with deduplication analysis
+    ├── README_BERT.md                               # DistilBERT experiment documentation
+    └── README_RoBERTa.md                            # RoBERTa experiment documentation
+```
 
-| File | Description |
-|------|-------------|
-| `NLP_G4_final.ipynb` | **Final submission notebook** (copy of DistilBERT notebook) |
-| `testing_data_lowercase_nolabels_final.csv` | **Final submission predictions** (copy of DistilBERT predictions) |
-
-### Notebooks (Experiments)
-
-| File | Model | Description |
-|------|-------|-------------|
-| `NLP_G4_LogisticRegression_Comparison.ipynb` | Logistic Regression | 9 preprocessing configs compared with deduplication |
-| `NLP_G4_BERT2.0.ipynb` | DistilBERT | Fine-tuned transformer (selected model) |
-| `NLP_G4_RoBERTa.ipynb` | RoBERTa | Fine-tuned transformer (evaluated, not selected) |
-
-### Data Files
-
-| File | Description |
-|------|-------------|
-| `training_data_lowercase.csv` | Training dataset (34,152 labeled headlines) |
-| `testing_data_lowercase_nolabels.csv` | Test dataset (9,984 unlabeled headlines) |
-| `testing_data_predictions_LR.csv` | Logistic Regression predictions on test data |
-| `validation_data_predictions_BERT20.csv` | DistilBERT predictions on test data |
-| `validation_data_predictions_RoBERTa.csv` | RoBERTa predictions on test data |
-
-### Documentation
-
-| File | Description |
-|------|-------------|
-| `README.md` | This file -- project overview and final comparison |
-| `README_LogisticRegression.md` | Detailed LR experiment documentation |
-| `README_LogisticRegression_v2.md` | Updated LR documentation with deduplication analysis |
-| `README_BERT.md` | Detailed DistilBERT experiment documentation |
-| `README_RoBERTa.md` | Detailed RoBERTa experiment documentation |
-
-### Other
-
-| File | Description |
-|------|-------------|
-| `Presentation template.pptx` | Slide deck for project presentation |
+**`NLP_G4_final.ipynb`** and **`testing_data_lowercase_nolabels_final.csv`** at the root are copies of the DistilBERT notebook and its predictions, serving as the official competition submission. The `road_to_success/` folder contains the full experimental journey -- all three model notebooks, training and test datasets, intermediate predictions, and per-model documentation showing how we arrived at our final choice.
 
 ---
 
 ## How to Reproduce
 
 ### Logistic Regression (no GPU required)
-1. Open `NLP_G4_LogisticRegression_Comparison.ipynb` in Jupyter or Colab
-2. Place `training_data_lowercase.csv` in the working directory
+1. Open `road_to_success/NLP_G4_LogisticRegression_Comparison.ipynb` in Jupyter or Colab
+2. Ensure `training_data_lowercase.csv` is in the working directory (available in `road_to_success/`)
 3. Run all cells -- trains in seconds on CPU
 
 ### DistilBERT / RoBERTa (GPU required)
-1. Open the respective notebook in Google Colab
+1. Open the respective notebook from `road_to_success/` in Google Colab
 2. Enable GPU runtime: Runtime > Change runtime type > GPU
-3. Upload `training_data_lowercase.csv` when prompted (or place in `/content/`)
+3. Upload `training_data_lowercase.csv` when prompted (available in `road_to_success/`)
 4. Run all cells
-5. For test predictions, upload `testing_data_lowercase_nolabels.csv`
+5. For test predictions, upload `testing_data_lowercase_nolabels.csv` from `road_to_success/`
 
 ### Requirements
 ```
@@ -203,4 +188,4 @@ torch (provided by Colab)
 
 ---
 
-*Group 4 -- IronHack Data Science Bootcamp, Week 4 NLP Challenge*
+*Rodrigo Torralba · Hrishikesh Reddy Sanivarapu · Krzysztof Giwojno — Group 4, IronHack Data Science Bootcamp, Week 4 NLP Challenge*
